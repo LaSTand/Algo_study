@@ -1,5 +1,8 @@
+/* 
+ *  Simple string quicksort algorithm
+ */
 #include <stdio.h>
-#include <string.h>	// For 'strcpy' and 'strcmp' function.
+#include <string.h>
 // swap the strings
 void swap(char * a, char * b)
 {
@@ -44,8 +47,8 @@ void quicksort(char (*arr)[20], int lo, int hi)
 
 int main()
 {
-	FILE * fp_input = fopen("InputList.txt", "rt");		// File pointer that open InputList.txt(read)
-	FILE * fp_output = fopen("OutputList.txt", "wt");	// File pointer taht write OutputList.txt(write)
+	FILE * fp_input = fopen("InputList.txt", "rt");	
+	FILE * fp_output = fopen("OutputList.txt", "wt");
 
 	char list[20][20];	// 2-dimension array that save the strings from 'InputList.txt'
 
@@ -62,9 +65,9 @@ int main()
 	while(!feof(fp_input))
 	{
 		fgets(list[idx], 20, fp_input);
-		if(feof(fp_input)!= 0)				//There's no 'new line' at the end of file.
+		if(feof(fp_input) != 0)				//There's no 'new line' at the end of file.
 		{
-			for(i=0; i<20; i++)				//At the end of file, add 'new line' at the end array.
+			for(i = 0 ; i < 20 ; i++)		//At the end of file, add 'new line' at the end array.
 			{
 				if(list[idx][i]==NULL)		//At the last array's end.
 				{
@@ -75,7 +78,7 @@ int main()
 			}
 		}
 		idx++;
-		if(idx >=20)						// 'list' have set [20][20], so max num of string is 20!
+		if(idx >= 20)						// 'list' have set [20][20], so max num of string is 20!
 		{
 			printf("Max number of strings is %d !!!\n", idx-1);
 			return -1;
@@ -88,7 +91,7 @@ int main()
 	printf("  Before Sorting  \n");
 	printf("==================\n");
 	// Print saved strings in the array 'list'.
-	for(j=0; j<idx; j++)
+	for(j = 0 ; j < idx ; j++)
 	{
 		printf("%s", list[j]);
 	}
@@ -106,12 +109,12 @@ int main()
 	// Print sorted strings in the array 'list'.	
 
 
-	for(j=0; j<idx; j++)
+	for(j = 0 ; j < idx ; j++)
 	{
 		printf("%s", list[j]);
 	}
 	// Print strings of array 'list' to 'OutputList.txt'
-	for(k=0; k<idx; k++)
+	for(k = 0 ; k < idx ; k++)
 	{
 		fputs(list[k], fp_output);
 	}
