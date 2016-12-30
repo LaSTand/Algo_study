@@ -1,0 +1,16 @@
+jeonbuk
+chungnam
+gyeongnam
+seoul
+gangwon
+jeonnam
+gyeongbuk
+ulsan
+daegu
+gyeonggi
+busan
+chungbuk
+gwangju
+incheon
+jeju
+daejeon
